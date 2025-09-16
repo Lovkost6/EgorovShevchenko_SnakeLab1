@@ -119,7 +119,7 @@ class Obstacle:
                 Config.GRID_SIZE, Config.GRID_SIZE
             )
             pygame.draw.rect(surface, self.color, rect)
-            pygame.draw.rect(surface, Config.RED, rect, 2)  # Более толстая обводка
+            pygame.draw.rect(surface, Config.BLACK, rect, 2)  # Более толстая обводка
 
 class Food:
     def __init__(self, snake_positions, obstacles):
@@ -524,9 +524,6 @@ class Game:
         
         pygame.quit()
 
-# Необходимые импорты для генерации звуков
-import numpy
-import math
 
 def main():
     pygame.init()
