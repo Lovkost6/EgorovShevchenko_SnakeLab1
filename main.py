@@ -98,7 +98,7 @@ def draw_grid(surface):
     for y in range(0, HEIGHT, GRID_SIZE):
         for x in range(0, WIDTH, GRID_SIZE):
             rect = pygame.Rect(x, y, GRID_SIZE, GRID_SIZE)
-            pygame.draw.rect(surface, BLACK, rect, 1)
+            pygame.draw.rect(surface, WHITE, rect, 1)
 
 
 def main():
@@ -138,15 +138,15 @@ def main():
         food.draw(screen)
 
         # Отображение счета
-        font = pygame.font.SysFont('Arial', 20)
-        score_text = font.render(f'Счет: {score}', True, BLACK)
+        font = pygame.font.SysFont('Arial', 20, bold=True)
+        score_text = font.render(f'Счет: {score}', True, GREEN)
         screen.blit(score_text, (5, 5))
 
         pygame.display.update()
         clock.tick(FPS)
 
     # Экран завершения игры
-    font = pygame.font.SysFont('Arial', 30)
+    font = pygame.font.SysFont('Arial', 30, bold=True)
     game_over_text = font.render(f'Игра окончена! Счет: {score}', True, BLACK)
     screen.blit(game_over_text, (WIDTH // 2 - 150, HEIGHT // 2 - 15))
     pygame.display.update()
